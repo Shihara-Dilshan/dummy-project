@@ -1,11 +1,20 @@
 package com.camera_check;
 
+import android.util.Log;
+
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;
 import com.facebook.react.defaults.DefaultNewArchitectureEntryPoint;
 import com.facebook.react.defaults.DefaultReactActivityDelegate;
+import org.opencv.android.OpenCVLoader;
 
 public class MainActivity extends ReactActivity {
+
+  static {
+    if(OpenCVLoader.initDebug()) {
+      Log.d("TEST", "opencv loaded");
+    }
+  }
 
   /**
    * Returns the name of the main component registered from JavaScript. This is used to schedule
